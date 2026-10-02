@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f2eb" />
+    <meta name="description" content="A CSS Zen Garden study: one page, four visual styles, and a quiet interactive gravel garden." />
+    <title>CSS Zen Garden | The beauty of CSS design</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="garden.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="CSS Zen Garden home">
+        <span class="wordmark-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>css zen garden</span>
+      </a>
+      <div class="topbar-note"><span class="live-dot" aria-hidden="true"></span> A study in the power of style</div>
+      <div class="topbar-index">ONE PAGE <span> / </span> MANY STYLES</div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span>CSS ZEN GARDEN</span> <span class="eyebrow-divider"></span> THE BEAUTY OF CSS DESIGN</p>
+          <h1 id="page-title">One garden.<br /><em>Many ways to see it.</em></h1>
+        </div>
+        <div class="intro-side">
+          <p>The words stay in place. Change the stylesheet, and the whole world around them changes.</p>
+          <span class="intro-coordinate">A LIVING STUDY IN WEB DESIGN</span>
+        </div>
+      </section>
+
+      <section class="design-switcher" aria-labelledby="design-title">
+        <div class="design-description">
+          <span class="switcher-kicker">THE SAME PAGE, RESTYLED</span>
+          <h2 id="design-title">Choose a design</h2>
+        </div>
+        <div class="design-choices" role="group" aria-label="Choose a stylesheet">
+          <button class="design-choice is-active" type="button" data-design-choice="still" aria-pressed="true"><span class="design-swatch" aria-hidden="true"></span><span>Stillness</span></button>
+          <button class="design-choice" type="button" data-design-choice="verdant" aria-pressed="false"><span class="design-swatch" aria-hidden="true"></span><span>Verdant</span></button>
+          <button class="design-choice" type="button" data-design-choice="clay" aria-pressed="false"><span class="design-swatch" aria-hidden="true"></span><span>Earth &amp; ink</span></button>
+          <button class="design-choice" type="button" data-design-choice="ink" aria-pressed="false"><span class="design-swatch" aria-hidden="true"></span><span>Moon garden</span></button>
+        </div>
+      </section>
+
+      <section class="garden-section" aria-label="Interactive Zen garden">
+        <div class="garden-heading">
+          <div class="garden-heading-title"><span class="section-index">01</span><h2>The gravel garden</h2></div>
+          <div class="garden-caption"><span class="caption-line"></span><span id="garden-status" aria-live="polite">A fresh beginning</span></div>
+        </div>
+
+        <div class="garden-frame">
+          <canvas id="garden" aria-label="Interactive Japanese-inspired garden with raked gravel, stones, moss, a pond, stepping stones, and a stone lantern. Select a tool, then drag or click to shape the garden. Press Enter or Space while focused to use a tool at the garden centre.">
+            An interactive gravel garden with stones, moss, and a pond.
+          </canvas>
+          <div class="scene-note"><span class="scene-note-dot"></span> THE GARDEN, AS IT IS</div>
+          <div class="scene-coordinate">庭園 <span>·</span> KYOTO, JAPAN</div>
+          <div class="scene-edge" aria-hidden="true"></div>
+        </div>
+
+        <div class="garden-toolbar">
+          <div class="toolbar-tools" role="group" aria-label="Garden tools">
+            <span class="toolbar-label">SHAPE</span>
+            <button class="tool-button is-active" type="button" data-tool="rake" aria-pressed="true" title="Rake the gravel">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v8M6 8h8M5.5 8l-1 7M8.5 8l-.5 7M11.5 8l.5 7M14.5 8l1 7" /></svg>
+              <span>Rake</span>
+            </button>
+            <button class="tool-button" type="button" data-tool="stone" aria-pressed="false" title="Place a stone">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 15c.3-3.5 2.2-6.1 5.1-6.1 1.4-2.4 5.1-2.8 6.5-.1 1.4.5 2.3 2.7 2.1 6.2H3Z" /><path d="M6 15c.7-1.1 1.7-1.7 3-1.8" /></svg>
+              <span>Stone</span>
+            </button>
+            <button class="tool-button" type="button" data-tool="moss" aria-pressed="false" title="Place a patch of moss">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 14.5c0-1.6 1.2-2.6 2.7-2.5.2-2.1 2.6-3.2 4.1-1.8 1.2-2 4.4-1.4 4.6.8 1.4-.2 2.6.9 2.6 2.4 0 1.2-1 2.1-2.3 2.1H5.2c-1.3 0-2.2-.3-2.2-1Z" /><path d="M7 14.2h.1m3.1-.9h.1m3.1 1.1h.1" /></svg>
+              <span>Moss</span>
+            </button>
+          </div>
+
+          <div class="toolbar-actions">
+            <button class="icon-button light-toggle" id="light-toggle" type="button" aria-pressed="false" title="Change the garden light">
+              <svg class="sun-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.2" /><path d="M10 2v1.5M10 16.5V18M18 10h-1.5M3.5 10H2m13.7-5.7-1.1 1.1M5.4 14.6l-1.1 1.1m11.4 0-1.1-1.1M5.4 5.4 4.3 4.3" /></svg>
+              <span id="light-label">Daylight</span>
+            </button>
+            <span class="action-divider" aria-hidden="true"></span>
+            <button class="icon-button" id="undo-button" type="button" title="Undo last change" aria-label="Undo last change" disabled>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 6 4 9.5l3.5 3.5" /><path d="M4.5 9.5h7a4.5 4.5 0 0 1 0 9h-1" /></svg>
+              <span>Undo</span>
+            </button>
+            <button class="icon-button reset-button" id="reset-button" type="button" title="Clear your changes">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 6.5h11M8 6.5V4h4v2.5m2 0-.6 9H6.6l-.6-9m3 2.2v4.5m2-4.5v4.5" /></svg>
+              <span>Reset</span>
+            </button>
+          </div>
+        </div>
+        <p class="tool-hint" id="tool-hint">Drag gently across the gravel to leave a line.</p>
+      </section>
+
+      <footer class="page-footer">
+        <div class="footer-elements" aria-label="Garden elements"><span>GRAVEL</span><i></i><span>STONE</span><i></i><span>MOSS</span><i></i><span>WATER</span></div>
+        <p><span id="change-count">0</span> gestures made <span class="footer-separator">·</span> Take your time</p>
+        <span class="footer-japanese" lang="ja">静けさの庭</span>
+      </footer>
+
+      <section class="challenge-copy" aria-label="About the CSS Zen Garden">
+        <article class="story-block" id="road">
+          <div class="story-number">01 <span> / </span> THE ROAD</div>
+          <div><h2>The road to enlightenment</h2><p>The web has travelled a long way from rigid tables and browser-specific tricks. Today, thoughtful standards let structure and presentation work together: clear words underneath, an open field for design above.</p></div>
+        </article>
+        <article class="story-block" id="about">
+          <div class="story-number">02 <span> / </span> THE IDEA</div>
+          <div><h2>So, what is this about?</h2><p>This page is a small tribute to the CSS Zen Garden challenge. Its central idea is simple and generous: keep the HTML, change the CSS, and discover how differently the same content can feel. Choose a style above to see this page shift without losing a word.</p></div>
+        </article>
+        <article class="story-block" id="participation">
+          <div class="story-number">03 <span> / </span> TAKE PART</div>
+          <div><h2>Participation</h2><p>Start with the structure, then make the visual decisions your own. In the garden above, rake the gravel or place a stone or moss. Here, the four design studies offer different starting points for the same content.</p></div>
+        </article>
+        <article class="story-block" id="benefits">
+          <div class="story-number">04 <span> / </span> WHY DESIGN</div>
+          <div><h2>Benefits</h2><p>Design is a way of seeing what a page can become. These studies celebrate the craft of CSS, make room for experimentation, and invite people to learn from one another's work.</p></div>
+        </article>
+        <article class="story-block" id="requirements">
+          <div class="story-number">05 <span> / </span> GOOD PRACTICE</div>
+          <div><h2>Requirements</h2><p>A beautiful page should still be readable, responsive, and easy to navigate. This garden keeps its tools labelled, works with a keyboard, and respects reduced-motion preferences along the way.</p></div>
+        </article>
+      </section>
+
+      <footer class="source-footer">
+        <span>ONE STRUCTURE, MANY POSSIBILITIES</span>
+        <a href="https://csszengarden.com/" target="_blank" rel="noreferrer">VISIT THE ORIGINAL CHALLENGE <span aria-hidden="true">↗</span></a>
+      </footer>
+      <span class="sr-only" id="keyboard-help">Use Tab to choose a garden tool. Focus the garden and press Enter or Space to use the selected tool in its centre.</span>
+    </main>
+    <span class="sr-only" id="mode-announcer" aria-live="polite"></span>
+  </body>
+</html>
